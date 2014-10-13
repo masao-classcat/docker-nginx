@@ -4,7 +4,7 @@ MAINTAINER Masashi Okumura <masao@classcat.com>
 
 RUN apt-get update \
 	&& apt-get install -y software-properties-common \
-	&& add-apt-repository -y ppa:nginx/stable
+	&& add-apt-repository -y ppa:nginx/stable \
 	&& apt-get install -y nginx
 
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
