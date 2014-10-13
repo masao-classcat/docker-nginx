@@ -9,6 +9,8 @@ RUN apt-get update \
 
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
+VOLUME ["/usr/share/nginx/html"]
+
 EXPOSE 80
 EXPOSE 443
 
