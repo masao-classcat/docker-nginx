@@ -2,9 +2,12 @@
 FROM ubuntu:14.04
 MAINTAINER Masashi Okumura <masao@classcat.com>
 
-RUN apt-get update && apt-get install -y nginx
+RUN apt-get update \
+	&& apt-get install -y software-properties-common \
+	&& add-apt-repository -y ppa:nginx/stable
+	&& apt-get install -y nginx
 
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 EXPOSE 80
 EXPOSE 443
